@@ -842,31 +842,8 @@
   </div>
   <div class="footer-names">Riddhi &amp; Poojan</div>
   <div class="footer-credit">Crafted with love ♥</div>
-  <div class="footer-views" style="font-size:8px;letter-spacing:0;color:rgba(0,31,91,.92);margin-top:14px;user-select:text">
-    <span id="viewCount">—</span>
-  </div>
 </footer>
 
-<script>
-  window.addEventListener('load', function(){
-    setTimeout(function(){
-      try{
-        var el=document.getElementById('viewCount');
-        if(!el || !window.fetch) return;
-        var ctrl = (typeof AbortController!=='undefined') ? new AbortController() : null;
-        var timer = setTimeout(function(){ if(ctrl) ctrl.abort(); }, 3000);
-        fetch('https://api.counterapi.dev/v1/riddhi-poojan-invite/views/up', ctrl?{signal:ctrl.signal}:{})
-          .then(function(r){ return r.ok ? r.json() : null; })
-          .then(function(d){
-            clearTimeout(timer);
-            if(el && d && typeof d.count!=='undefined') el.textContent=d.count;
-            else if(el) el.textContent='';
-          })
-          .catch(function(){ clearTimeout(timer); if(el) el.textContent=''; });
-      }catch(e){}
-    }, 1500);
-  });
-</script>
 
 <script>
   // Countdown
@@ -949,5 +926,7 @@
     window.open('https://wa.me/919962713500?text=' + msg, '_blank');
   }
 </script>
+<!-- Visit counter: stats at https://thevee.goatcounter.com -->
+<script data-goatcounter="https://thevee.goatcounter.com/count" async src="count.js"></script>
 </body>
 </html>
